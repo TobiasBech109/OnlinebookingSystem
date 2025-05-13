@@ -28,9 +28,14 @@ public partial class Bruger
     [StringLength(50)]
     public string Rolle { get; set; }
 
+    [Required]
+    [StringLength(50)]
+    public string Kode { get; set; }
+
     [InverseProperty("Bruger")]
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 
     [InverseProperty("Bruger")]
     public virtual ICollection<Fag> Fags { get; set; } = new List<Fag>();
+
 }

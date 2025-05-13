@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1.Models;
 
-public partial class BoookingContext : DbContext
+public partial class BookingContext : DbContext
 {
-    public BoookingContext()
+    public BookingContext()
     {
     }
 
-    public BoookingContext(DbContextOptions<BoookingContext> options)
+    public BookingContext(DbContextOptions<BookingContext> options)
         : base(options)
     {
     }
