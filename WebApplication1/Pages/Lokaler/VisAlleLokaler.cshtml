@@ -1,4 +1,5 @@
 ﻿@page
 @model OnlinebookingSystem.Pages.Lokaler.VisAlleLokalerModel
 @{
-}
+} @foreach (var l in Model.Lokaler){<p>@l.Id</p>}
+

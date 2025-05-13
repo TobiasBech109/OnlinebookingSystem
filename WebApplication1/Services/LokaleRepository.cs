@@ -2,7 +2,7 @@
 
 namespace OnlinebookingSystem.Services
 {
-	public class LokaleRepository
+	public class LokaleRepository : ILokaleRepository
 	{
 		public List<Lokale> GetAll()
 		{

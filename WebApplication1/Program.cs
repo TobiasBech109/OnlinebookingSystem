@@ -1,8 +1,11 @@
+using OnlinebookingSystem.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IBrugerRepository, BrugerRepository>();
+builder.Services.AddSingleton<ILokaleRepository, LokaleRepository>();
 
 var app = builder.Build();
 
