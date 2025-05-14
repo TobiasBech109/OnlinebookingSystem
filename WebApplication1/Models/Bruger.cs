@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using OnlinebookingSystem.Models;
 
 namespace WebApplication1.Models;
 
 [Table("Bruger")]
-public partial class Bruger
+public partial class Bruger : IHarId
 {
     [Key]
     public int Id { get; set; }
@@ -37,5 +38,16 @@ public partial class Bruger
 
     [InverseProperty("Bruger")]
     public virtual ICollection<Fag> Fags { get; set; } = new List<Fag>();
+
+    public bool IsAdmin() { return Rolle == "admin"; }
+    public override string ToString()
+    {
+        return $"[Kunde {Id}] {Navn} (tlf: {Telefon}), Email er {Mail} og deres givende Rolle {Rolle}";
+    }
+
+    public static Bruger Construct(string navn, int telefon, string email)
+    {
+        return new Bruger { Navn = navn, Telefon = telefon, Mail = email };
+    }
 
 }

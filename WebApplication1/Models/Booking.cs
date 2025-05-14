@@ -33,4 +33,15 @@ public partial class Booking
     [ForeignKey("LokaleId")]
     [InverseProperty("Bookings")]
     public virtual Lokale Lokale { get; set; }
+
+    public override string ToString()
+    {
+        return $"[Booking {Id}] {Bruger.Navn} har booket {Lokale.Id} fra {Starttid}, til {Sluttid} og de har valgt {Smartboard} fra {Starttid} til {Sluttid}";
+    }
+
+    //TODO bruger id skal ændres til navn 
+    public static Booking Construct(int brugerid, int lokaleId, DateTime starttid, DateTime sluttid, bool smartboard)
+    {
+        return new Booking {BrugerId = brugerid, LokaleId = lokaleId, Starttid = starttid, Sluttid = sluttid, Smartboard = smartboard };
+    }
 }

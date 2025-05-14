@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using OnlinebookingSystem.Models;
 
 namespace WebApplication1.Models;
 
 [Table("Hold")]
-public partial class Hold
+public partial class Hold : IHarId
 {
     [Key]
     public int Id { get; set; }

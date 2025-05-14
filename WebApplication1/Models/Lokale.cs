@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using OnlinebookingSystem.Models;
 
 namespace WebApplication1.Models;
 
 [Table("Lokale")]
-public partial class Lokale
+public partial class Lokale : IHarId
 {
     [Key]
     public int Id { get; set; }
@@ -18,10 +19,20 @@ public partial class Lokale
 
     [Required]
     [StringLength(50)]
-    public string Størrelse { get; set; }
+    public int Størrelse { get; set; }
 
     public int Kapacitet { get; set; }
 
     [InverseProperty("Lokale")]
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+
+    public override string ToString()
+    {
+        return $"[Lokale {Id}] Smartboard er {Smartboard}, og lokalets størrelse er til {Størrelse} grupper, og der kan være {Kapacitet}";
+    }
+
+    public static Lokale Construct(int id, bool smartboard, int størrelse, int kapacitet)
+    {
+        return new Lokale { Id = id, Smartboard = smartboard, Størrelse = størrelse, Kapacitet = kapacitet };
+    }
 }
