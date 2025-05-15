@@ -1,8 +1,8 @@
 ﻿
 public interface IBrugerRepository
 {
-    public interface IBrugerRepository<T> where T : Bruger;
     List<Bruger> GetAll();
+    int Create(Bruger b);
 
 }
 

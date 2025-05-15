@@ -2,14 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 
 
-public abstract class BrugerRepository<T, TContext> : IBrugerRepository<T>
-    where T : class
-    where TContext : DbContext, new()
-    
-public class BrugerRepository : IBrugerRepository
-    where T : class
-    where TContext : DbContext, new()
+public abstract class BrugerRepository : IBrugerRepository
 {
+    
+
     public List<Bruger> GetAll()
     {
         using BookingContext context = new BookingContext();
@@ -17,17 +13,23 @@ public class BrugerRepository : IBrugerRepository
     }
 
 
-    public virtual int Create(T t)
+    public virtual int Create(Bruger b)
     {
-        using DbContext context = new TContext();
+
+
+        using DbContext context = new BookingContext();
 
         int id = NextId();
-        t.Id = id;
+        b.Id = id;
 
-        context.Set<T>().Add(t);
+        context.Set<Bruger>().Add(b);
         context.SaveChanges();
 
-        return t.Id;
+        return b.Id;
+    }
+    private int NextId()
+    {
+        return GetAll().Select(b => b.Id).DefaultIfEmpty(0).Max() + 1;
     }
 
 

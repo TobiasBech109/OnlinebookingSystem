@@ -25,7 +25,7 @@ public partial class Bruger
 
     [Required]
     [StringLength(50)]
-    public string Rolle { get; set; }
+    public string Rolle { get;}
 
     [Required]
     [StringLength(50)]
