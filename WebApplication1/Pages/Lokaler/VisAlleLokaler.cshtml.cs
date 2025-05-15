@@ -1,10 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OnlinebookingSystem.Services;
-using WebApplication1.Models;
 
-namespace OnlinebookingSystem.Pages.Lokaler
-{
+
+
+
 	public class VisAlleLokalerModel : PageModel
 	{
 
@@ -21,5 +20,3 @@ namespace OnlinebookingSystem.Pages.Lokaler
 		}
 	
 	}
-    
-}

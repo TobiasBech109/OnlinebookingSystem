@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
-using OnlinebookingSystem.Models;
 
-namespace WebApplication1.Models;
+
+
 
 [Table("Lokale")]
-public partial class Lokale : IHarId
+public partial class Lokale 
 {
     [Key]
     public int Id { get; set; }

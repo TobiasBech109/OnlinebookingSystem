@@ -1,7 +1,7 @@
-﻿using WebApplication1.Models;
+﻿
 
-namespace OnlinebookingSystem.Services
-{
+
+
 	public class LokaleRepository : ILokaleRepository
 	{
 		public List<Lokale> GetAll()
@@ -10,4 +10,4 @@ namespace OnlinebookingSystem.Services
 			return context.Lokales.ToList();
 		}
 	}
-}
+

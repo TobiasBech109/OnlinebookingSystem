@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using WebApplication1.Models;
 
-namespace OnlinebookingSystem.Pages.Brugere
-{
+
+
     public class VisAlleBrugereModel : PageModel
     {
         private IBrugerRepository _brugerRepository;
@@ -18,4 +17,3 @@ namespace OnlinebookingSystem.Pages.Brugere
             _brugerRepository = brugerRepository;
         }
     }
-}

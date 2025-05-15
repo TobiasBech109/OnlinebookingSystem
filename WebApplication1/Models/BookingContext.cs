@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebApplication1.Models;
+
 
 public partial class BookingContext : DbContext
 {

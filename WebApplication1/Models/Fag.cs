@@ -6,8 +6,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebApplication1.Models;
-
 [Table("Fag")]
 public partial class Fag
 {
